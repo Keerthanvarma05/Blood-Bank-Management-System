@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Blood Bank Management System</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<header>
+
+    <nav class="navbar">
+
+        <div class="logo">
+            <i class="fa-solid fa-droplet"></i>
+            <span>Blood Bank</span>
+        </div>
+
+        <ul class="nav-links">
+
+            <li><a href="index.html">Home</a></li>
+            <li><a href="pages/about.html">About</a></li>
+            <li><a href="pages/blood-availability.html">Blood Availability</a></li>
+            <li><a href="pages/contact.html">Contact</a></li>
+
+        </ul>
+
+        <div class="nav-buttons">
+
+            <button class="login-btn"
+                onclick="window.location.href='pages/login.html'">
+
+                Login
+
+            </button>
+
+            <button class="register-btn"
+                onclick="window.location.href='pages/register.html'">
+
+                Register
+
+            </button>
+
+        </div>
+
+    </nav>
+
+</header>
+
+<!-- ================= HERO SECTION ================= -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <h1>
+
+            Donate Blood,
+            <span>Save Lives</span>
+
+        </h1>
+
+        <p>
+
+            One donation can save up to three lives.
+            Join thousands of heroes who make a difference every day.
+
+        </p>
+
+        <div class="hero-buttons">
+
+            <button
+                class="donate-btn"
+                onclick="window.location.href='pages/donor.html'">
+
+                Become a Donor
+
+            </button>
+
+            <button
+                class="request-btn"
+                onclick="window.location.href='pages/blood-request.html'">
+
+                Request Blood
+
+            </button>
+
+        </div>
+
+    </div>
+
+    <div class="hero-image">
+
+        <i class="fa-solid fa-heart-circle-plus"></i>
+
+    </div>
+
+</section>
+
+<!-- ================= STATISTICS ================= -->
+
+<section class="statistics">
+
+    <div class="stat-card">
+
+        <i class="fa-solid fa-users"></i>
+
+        <h2 id="totalDonors">0</h2>
+
+        <p>Registered Donors</p>
+
+    </div>
+
+    <div class="stat-card">
+
+        <i class="fa-solid fa-droplet"></i>
+
+        <h2 id="totalUnits">0</h2>
+
+        <p>Blood Units Available</p>
+
+    </div>
+
+    <div class="stat-card">
+
+        <i class="fa-solid fa-hospital"></i>
+
+        <h2 id="totalBloodBanks">0</h2>
+
+        <p>Blood Banks</p>
+
+    </div>
+
+</section>
+
+<!-- ================= BLOOD GROUPS ================= -->
+
+<section class="blood-groups">
+
+    <h2>Available Blood Groups</h2>
+
+    <p>Check the available blood groups in our blood bank.</p>
+
+    <div class="blood-container">
+
+        <div class="blood-card"
+            onclick="window.location.href='pages/blood-availability.html?group=A+'">
+            A+
+        </div>
+
+        <div class="blood-card"
+            onclick="window.location.href='pages/blood-availability.html?group=A-'">
+            A-
+        </div>
+
+        <div class="blood-card"
+            onclick="window.location.href='pages/blood-availability.html?group=B+'">
+            B+
+        </div>
+
+        <div class="blood-card"
+            onclick="window.location.href='pages/blood-availability.html?group=B-'">
+            B-
+        </div>
+
+        <div class="blood-card"
+            onclick="window.location.href='pages/blood-availability.html?group=AB+'">
+            AB+
+        </div>
+
+        <div class="blood-card"
+            onclick="window.location.href='pages/blood-availability.html?group=AB-'">
+            AB-
+        </div>
+
+        <div class="blood-card"
+            onclick="window.location.href='pages/blood-availability.html?group=O+'">
+            O+
+        </div>
+
+        <div class="blood-card"
+            onclick="window.location.href='pages/blood-availability.html?group=O-'">
+            O-
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= WHY CHOOSE US ================= -->
+
+<section class="why-us">
+
+    <h2>Why Choose Our Blood Bank?</h2>
+
+    <p>
+
+        We provide safe, fast, and reliable blood donation services with certified medical professionals.
+
+    </p>
+
+    <div class="features">
+
+        <div class="feature-card">
+
+            <i class="fa-solid fa-heart-circle-check"></i>
+
+            <h3>Safe Donation</h3>
+
+            <p>
+
+                Every donation follows WHO safety standards and is supervised by certified professionals.
+
+            </p>
+
+        </div>
+
+        <div class="feature-card">
+
+            <i class="fa-solid fa-bolt"></i>
+
+            <h3>Emergency Support</h3>
+
+            <p>
+
+                Quick blood availability during emergencies with instant request processing.
+
+            </p>
+
+        </div>
+
+        <div class="feature-card">
+
+            <i class="fa-solid fa-user-doctor"></i>
+
+            <h3>Expert Medical Team</h3>
+
+            <p>
+
+                Experienced doctors and healthcare professionals ensure donor safety.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= HOW IT WORKS ================= -->
+
+<section class="how-it-works">
+
+    <h2>How Blood Donation Works</h2>
+
+    <p>Your journey from registration to saving lives.</p>
+
+    <div class="timeline">
+
+        <div class="timeline-card">
+
+            <div class="circle">1</div>
+
+            <h3>Register</h3>
+
+            <p>Create your donor account securely.</p>
+
+        </div>
+
+        <div class="timeline-card">
+
+            <div class="circle">2</div>
+
+            <h3>Health Check</h3>
+
+            <p>Quick medical screening before donation.</p>
+
+        </div>
+
+        <div class="timeline-card">
+
+            <div class="circle">3</div>
+
+            <h3>Donate Blood</h3>
+
+            <p>Safe blood donation with medical staff.</p>
+
+        </div>
+
+        <div class="timeline-card">
+
+            <div class="circle">4</div>
+
+            <h3>Save Lives</h3>
+
+            <p>Your blood reaches patients in need.</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<footer>
+
+    <h2>Blood Bank Management System</h2>
+
+    <p>Every Drop Counts ❤️</p>
+
+    <div class="social-icons">
+
+        <i class="fab fa-facebook"></i>
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-linkedin"></i>
+        <i class="fab fa-github"></i>
+
+    </div>
+
+    <p class="copyright">
+
+        © 2026 Blood Bank Management System
+
+    </p>
+
+</footer>
+
+<script src="js/dashboard.js"></script>
+
+</body>
+</html>

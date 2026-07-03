@@ -1,0 +1,258 @@
+/* ===========================
+   GOOGLE FONT
+=========================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+
+/* ===========================
+   RESET
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#f6f8fc;
+    color:#333;
+}
+
+
+/* ===========================
+   NAVBAR
+=========================== */
+
+header{
+    width:100%;
+    background:#ffffff;
+    box-shadow:0 2px 10px rgba(0,0,0,.08);
+}
+
+.navbar{
+    width:90%;
+    max-width:1400px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 0;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:28px;
+    font-weight:700;
+    color:#d90429;
+}
+
+.logo i{
+    font-size:32px;
+}
+
+.nav-links{
+    display:flex;
+    list-style:none;
+    gap:35px;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:#333;
+    font-weight:500;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:#d90429;
+}
+
+.nav-buttons{
+    display:flex;
+    gap:15px;
+}
+
+.login-btn{
+    border:none;
+    background:white;
+    border:2px solid #d90429;
+    color:#d90429;
+    padding:10px 22px;
+    border-radius:30px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.login-btn:hover{
+    background:#d90429;
+    color:white;
+}
+
+.register-btn{
+    border:none;
+    background:#d90429;
+    color:white;
+    padding:10px 22px;
+    border-radius:30px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.register-btn:hover{
+    background:#a6021f;
+}
+
+
+/* ===========================
+   HERO
+=========================== */
+
+.hero{
+    text-align:center;
+    padding:100px 20px 70px;
+}
+
+.hero h1{
+    font-size:56px;
+    margin-bottom:20px;
+    color:#222;
+}
+
+.hero p{
+    max-width:750px;
+    margin:auto;
+    font-size:20px;
+    line-height:1.8;
+    color:#666;
+}
+
+
+/* ===========================
+   MISSION CARDS
+=========================== */
+
+.cards{
+    width:90%;
+    max-width:1300px;
+    margin:40px auto 100px;
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+}
+
+.card{
+    background:white;
+    padding:45px 35px;
+    text-align:center;
+    border-radius:20px;
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+    transition:.35s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 20px 45px rgba(217,4,41,.15);
+}
+
+.card i{
+    font-size:60px;
+    color:#d90429;
+    margin-bottom:25px;
+}
+
+.card h2{
+    margin-bottom:18px;
+    font-size:30px;
+}
+
+.card p{
+    color:#666;
+    line-height:1.8;
+}
+
+
+/* ===========================
+   WHY DONATE
+=========================== */
+
+.why{
+    width:90%;
+    max-width:1200px;
+    margin:0 auto 100px;
+    text-align:center;
+}
+
+.why h2{
+    font-size:42px;
+    margin-bottom:50px;
+}
+
+.why-container{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:30px;
+}
+
+.why-container div{
+    background:white;
+    padding:30px;
+    border-radius:18px;
+    font-size:20px;
+    font-weight:500;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.why-container div:hover{
+    transform:translateY(-8px);
+    box-shadow:0 18px 40px rgba(217,4,41,.15);
+}
+
+
+/* ===========================
+   FOOTER
+=========================== */
+
+footer{
+    margin-top:80px;
+    background:#d90429;
+    color:white;
+    text-align:center;
+    padding:40px 20px;
+}
+
+footer p{
+    font-size:18px;
+}
+
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:992px){
+
+    .cards{
+        grid-template-columns:1fr;
+    }
+
+    .why-container{
+        grid-template-columns:1fr;
+    }
+
+    .navbar{
+        flex-direction:column;
+        gap:20px;
+    }
+
+    .nav-links{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+}

@@ -1,0 +1,208 @@
+/* ===========================
+   GOOGLE FONT
+=========================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* ===========================
+   RESET
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#f6f8fc;
+    color:#333;
+    overflow-x:hidden;
+}
+
+/* ===========================
+   NAVBAR
+=========================== */
+
+header{
+    position:sticky;
+    top:0;
+    left:0;
+    width:100%;
+    background:#ffffff;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+    z-index:1000;
+}
+
+.navbar{
+
+    width:90%;
+    max-width:1400px;
+
+    margin:auto;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:18px 0;
+}
+
+.logo{
+
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    text-decoration:none;
+
+    font-size:28px;
+    font-weight:700;
+
+    color:#d90429;
+}
+
+.logo i{
+    font-size:32px;
+}
+
+.nav-links{
+
+    display:flex;
+    list-style:none;
+
+    gap:35px;
+}
+
+.nav-links a{
+
+    text-decoration:none;
+    color:#333;
+
+    font-weight:500;
+
+    transition:.3s;
+}
+
+.nav-links a:hover{
+
+    color:#d90429;
+}
+
+.nav-buttons{
+
+    display:flex;
+    gap:15px;
+}
+
+.login-btn{
+
+    border:none;
+
+    background:white;
+
+    border:2px solid #d90429;
+
+    color:#d90429;
+
+    padding:10px 22px;
+
+    border-radius:30px;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.login-btn:hover{
+
+    background:#d90429;
+
+    color:white;
+}
+
+.register-btn{
+
+    border:none;
+
+    background:#d90429;
+
+    color:white;
+
+    padding:10px 22px;
+
+    border-radius:30px;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.register-btn:hover{
+
+    background:#a6021f;
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+
+footer{
+
+    margin-top:100px;
+
+    background:#d90429;
+
+    color:white;
+
+    text-align:center;
+
+    padding:50px 20px;
+}
+
+footer h2{
+
+    font-size:34px;
+
+    margin-bottom:15px;
+}
+
+footer p{
+
+    font-size:18px;
+
+    margin-bottom:10px;
+}
+
+.copyright{
+
+    font-size:16px;
+
+    opacity:.9;
+}
+
+/* ===========================
+   RESPONSIVE NAVBAR
+=========================== */
+
+@media(max-width:992px){
+
+    .navbar{
+
+        flex-direction:column;
+
+        gap:20px;
+    }
+
+    .nav-links{
+
+        flex-wrap:wrap;
+
+        justify-content:center;
+    }
+}
