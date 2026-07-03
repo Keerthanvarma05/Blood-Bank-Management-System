@@ -14,7 +14,7 @@ document.getElementById("registerForm").addEventListener("submit", async functio
 
     try {
 
-        const response = await fetch("http://localhost:5000/api/auth/register", {
+        const response = await fetch("http://44.211.188.5:5000/api/auth/register", {
 
             method: "POST",
 
