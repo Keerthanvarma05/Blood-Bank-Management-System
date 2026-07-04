@@ -1,9 +1,15 @@
+const API_BASE = `${window.location.protocol}//${window.location.hostname}:5000`;
+
 const donorForm = document.getElementById("donorForm");
 const donorTable = document.getElementById("donorTable");
 
 let editId = null;
 
 loadDonors();
+
+// ==============================
+// Add / Update Donor
+// ==============================
 
 donorForm.addEventListener("submit", async function (e) {
 
@@ -23,12 +29,12 @@ donorForm.addEventListener("submit", async function (e) {
 
     };
 
-    let url = "http://localhost:5000/api/donors";
+    let url = `${API_BASE}/api/donors`;
     let method = "POST";
 
     if (editId !== null) {
 
-        url += "/" + editId;
+        url = `${API_BASE}/api/donors/${editId}`;
         method = "PUT";
 
     }
@@ -38,9 +44,7 @@ donorForm.addEventListener("submit", async function (e) {
         method,
 
         headers: {
-
             "Content-Type": "application/json"
-
         },
 
         body: JSON.stringify(donor)
@@ -59,9 +63,13 @@ donorForm.addEventListener("submit", async function (e) {
 
 });
 
+// ==============================
+// Load Donors
+// ==============================
+
 async function loadDonors() {
 
-    const response = await fetch("http://localhost:5000/api/donors");
+    const response = await fetch(`${API_BASE}/api/donors`);
 
     const donors = await response.json();
 
@@ -103,6 +111,10 @@ async function loadDonors() {
 
 }
 
+// ==============================
+// Edit Donor
+// ==============================
+
 function editDonor(donor) {
 
     editId = donor.donor_id;
@@ -115,27 +127,29 @@ function editDonor(donor) {
     document.getElementById("email").value = donor.email;
     document.getElementById("city").value = donor.city;
     document.getElementById("address").value = donor.address;
+
     document.getElementById("lastDonation").value =
-        donor.last_donation ? donor.last_donation.split("T")[0] : "";
+        donor.last_donation
+            ? donor.last_donation.split("T")[0]
+            : "";
 
     window.scrollTo({
-
         top: 0,
         behavior: "smooth"
-
     });
 
 }
 
+// ==============================
+// Delete Donor
+// ==============================
+
 async function deleteDonor(id) {
 
-    if (!confirm("Delete this donor?"))
-        return;
+    if (!confirm("Delete this donor?")) return;
 
-    await fetch(`http://localhost:5000/api/donors/${id}`, {
-
+    await fetch(`${API_BASE}/api/donors/${id}`, {
         method: "DELETE"
-
     });
 
     loadDonors();

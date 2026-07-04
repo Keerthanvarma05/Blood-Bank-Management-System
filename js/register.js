@@ -1,3 +1,5 @@
+const API_BASE = `${window.location.protocol}//${window.location.hostname}:5000`;
+
 document.getElementById("registerForm").addEventListener("submit", async function (e) {
 
     e.preventDefault();
@@ -14,7 +16,7 @@ document.getElementById("registerForm").addEventListener("submit", async functio
 
     try {
 
-        const response = await fetch("http://44.211.188.5:5000/api/auth/register", {
+        const response = await fetch(`${API_BASE}/api/auth/register`, {
 
             method: "POST",
 

@@ -1,3 +1,5 @@
+const API_BASE = `${window.location.protocol}//${window.location.hostname}:5000`;
+
 const results = document.getElementById("results");
 const searchBtn = document.getElementById("searchBtn");
 
@@ -11,7 +13,7 @@ async function loadInventory() {
 
     try {
 
-        const response = await fetch("http://localhost:5000/api/inventory");
+        const response = await fetch(`${API_BASE}/api/inventory`);
 
         inventory = await response.json();
 

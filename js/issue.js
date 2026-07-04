@@ -1,3 +1,5 @@
+const API_BASE = `${window.location.protocol}//${window.location.hostname}:5000`;
+
 const issueForm = document.getElementById("issueForm");
 const issueTable = document.getElementById("issueTable");
 
@@ -42,14 +44,12 @@ issueForm.addEventListener("submit", async function (e) {
 
     }
 
-    const response = await fetch("http://localhost:5000/api/issues", {
+    const response = await fetch(`${API_BASE}/api/issues`, {
 
         method: "POST",
 
         headers: {
-
             "Content-Type": "application/json"
-
         },
 
         body: JSON.stringify(issue)
@@ -72,7 +72,7 @@ issueForm.addEventListener("submit", async function (e) {
 
 async function loadIssuedRecords() {
 
-    const response = await fetch("http://localhost:5000/api/issues");
+    const response = await fetch(`${API_BASE}/api/issues`);
 
     const issues = await response.json();
 
@@ -85,15 +85,10 @@ async function loadIssuedRecords() {
         <tr>
 
             <td>${issue.patient_name}</td>
-
             <td>${issue.hospital_name}</td>
-
             <td>${issue.blood_group}</td>
-
             <td>${issue.units_issued}</td>
-
             <td>${issue.issue_date}</td>
-
             <td>${issue.issued_by}</td>
 
             <td>
@@ -122,20 +117,13 @@ async function loadIssuedRecords() {
 
 async function deleteIssue(id) {
 
-    if (!confirm("Delete this record?"))
-        return;
+    if (!confirm("Delete this record?")) return;
 
-    const response = await fetch(
+    const response = await fetch(`${API_BASE}/api/issues/${id}`, {
 
-        `http://localhost:5000/api/issues/${id}`,
+        method: "DELETE"
 
-        {
-
-            method: "DELETE"
-
-        }
-
-    );
+    });
 
     const data = await response.json();
 

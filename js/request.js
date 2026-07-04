@@ -1,3 +1,5 @@
+const API_BASE = `${window.location.protocol}//${window.location.hostname}:5000`;
+
 const requestForm = document.getElementById("requestForm");
 const requestTable = document.querySelector("#requestTable tbody");
 
@@ -29,14 +31,12 @@ requestForm.addEventListener("submit", async function (e) {
 
     };
 
-    const response = await fetch("http://localhost:5000/api/bloodrequests", {
+    const response = await fetch(`${API_BASE}/api/bloodrequests`, {
 
         method: "POST",
 
         headers: {
-
             "Content-Type": "application/json"
-
         },
 
         body: JSON.stringify(request)
@@ -59,7 +59,7 @@ requestForm.addEventListener("submit", async function (e) {
 
 async function loadRequests() {
 
-    const response = await fetch("http://localhost:5000/api/bloodrequests");
+    const response = await fetch(`${API_BASE}/api/bloodrequests`);
 
     const requests = await response.json();
 
@@ -118,20 +118,13 @@ async function loadRequests() {
 
 async function approveRequest(id) {
 
-    if (!confirm("Approve this request?"))
-        return;
+    if (!confirm("Approve this request?")) return;
 
-    const response = await fetch(
+    const response = await fetch(`${API_BASE}/api/bloodrequests/approve/${id}`, {
 
-        `http://localhost:5000/api/bloodrequests/approve/${id}`,
+        method: "PUT"
 
-        {
-
-            method: "PUT"
-
-        }
-
-    );
+    });
 
     const data = await response.json();
 
@@ -147,20 +140,13 @@ async function approveRequest(id) {
 
 async function rejectRequest(id) {
 
-    if (!confirm("Reject this request?"))
-        return;
+    if (!confirm("Reject this request?")) return;
 
-    const response = await fetch(
+    const response = await fetch(`${API_BASE}/api/bloodrequests/reject/${id}`, {
 
-        `http://localhost:5000/api/bloodrequests/reject/${id}`,
+        method: "PUT"
 
-        {
-
-            method: "PUT"
-
-        }
-
-    );
+    });
 
     const data = await response.json();
 
@@ -176,20 +162,13 @@ async function rejectRequest(id) {
 
 async function deleteRequest(id) {
 
-    if (!confirm("Delete this request?"))
-        return;
+    if (!confirm("Delete this request?")) return;
 
-    const response = await fetch(
+    const response = await fetch(`${API_BASE}/api/bloodrequests/${id}`, {
 
-        `http://localhost:5000/api/bloodrequests/${id}`,
+        method: "DELETE"
 
-        {
-
-            method: "DELETE"
-
-        }
-
-    );
+    });
 
     const data = await response.json();
 

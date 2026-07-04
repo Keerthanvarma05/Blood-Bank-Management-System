@@ -1,8 +1,10 @@
+const API_BASE = `${window.location.protocol}//${window.location.hostname}:5000`;
+
 async function loadDashboardStats() {
 
     try {
 
-        const response = await fetch("http://localhost:5000/api/dashboard");
+        const response = await fetch(`${API_BASE}/api/dashboard`);
 
         const data = await response.json();
 
@@ -15,9 +17,7 @@ async function loadDashboardStats() {
         document.getElementById("totalBloodBanks").textContent =
             data.totalBloodBanks;
 
-    }
-
-    catch (err) {
+    } catch (err) {
 
         console.log(err);
 

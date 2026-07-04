@@ -1,3 +1,5 @@
+const API_BASE = `${window.location.protocol}//${window.location.hostname}:5000`;
+
 // ==============================
 // Show / Hide Password
 // ==============================
@@ -38,7 +40,7 @@ document.getElementById("loginForm").addEventListener("submit", async function (
 
     try {
 
-        const response = await fetch("http://localhost:5000/api/auth/login", {
+        const response = await fetch(`${API_BASE}/api/auth/login`, {
 
             method: "POST",
 

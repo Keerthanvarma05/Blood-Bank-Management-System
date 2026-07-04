@@ -1,3 +1,5 @@
+const API_BASE = `${window.location.protocol}//${window.location.hostname}:5000`;
+
 const inventoryForm = document.getElementById("inventoryForm");
 const inventoryTable = document.getElementById("inventoryTable");
 const bankSelect = document.getElementById("bankId");
@@ -7,10 +9,8 @@ const bankSelect = document.getElementById("bankId");
 // ==============================
 
 window.onload = () => {
-
     loadBloodBanks();
     loadInventory();
-
 };
 
 // ==============================
@@ -21,7 +21,7 @@ async function loadBloodBanks() {
 
     try {
 
-        const response = await fetch("http://localhost:5000/api/bloodbanks");
+        const response = await fetch(`${API_BASE}/api/bloodbanks`);
 
         const banks = await response.json();
 
@@ -65,7 +65,7 @@ inventoryForm.addEventListener("submit", async function (e) {
 
     try {
 
-        const response = await fetch("http://localhost:5000/api/inventory", {
+        const response = await fetch(`${API_BASE}/api/inventory`, {
 
             method: "POST",
 
@@ -103,7 +103,7 @@ async function loadInventory() {
 
     try {
 
-        const response = await fetch("http://localhost:5000/api/inventory");
+        const response = await fetch(`${API_BASE}/api/inventory`);
 
         const inventory = await response.json();
 
@@ -157,10 +157,9 @@ async function loadInventory() {
 
 async function deleteInventory(id) {
 
-    if (!confirm("Delete this inventory?"))
-        return;
+    if (!confirm("Delete this inventory?")) return;
 
-    await fetch(`http://localhost:5000/api/inventory/${id}`, {
+    await fetch(`${API_BASE}/api/inventory/${id}`, {
 
         method: "DELETE"
 
